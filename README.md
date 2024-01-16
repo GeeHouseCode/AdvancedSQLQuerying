@@ -1,4 +1,4 @@
 # AzureDataEngineerTraining
 Practice to become better!!!
 
-Repozytorium oparte jest o wiedzę zgromadzoną na stronie www.learn.microsoft.com, będzie ono zwierało moją drogę prowadząca do zdobycia ciertyfikatu Azure Data Engineer Associate - Certifications. Oczywiście nie będzie tu całej torii tam zawartej czy wszystkich ćwiczeń, postaram się przedstawić najciekawsze dla mnie zagadnienia oraz narzędzia. 
+The repository is based on the knowledge collected on the website www.learn.microsoft.com, it will cover my path to obtaining the Azure Data Engineer Associate - Certifications. Of course, there will not be the entire theory or exercises here, I will try to present the issues and tools that are most interesting to me.
