@@ -35,5 +35,5 @@ The result of the above SQL Views is the following table.
 ```SQL
 SELECT * FROM SalesQuota
 ```
-![View_2](https://github.com/GeeHouseCode/AdvancedSQLQuerying/assets/110656951/35d27ff9-8fe8-4506-a0cd-96048f3536e1)
+
 
