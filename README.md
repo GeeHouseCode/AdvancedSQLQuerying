@@ -1,4 +1,19 @@
-# Advanced Databases and SQL Querying
+# Advanced Databases and SQL Querying (PORTFOLIO)
 Practice to become better!!!
 
-The repository is based on the knowledge collected on the website www.udemy.com. Of course, there will not be the entire theory or exercises here, I will try to present the issues and tools that are most interesting to me.
+This repository contains portfolio of data science projects for the purpouse of self learnig and hobby.
+
+## SQL VIEWS
+
+```T-SQL
+CREATE VIEW CustomUSView
+AS
+SELECT * FROM [AdventureWorks2012].[Sales].[SalesTerritory]
+WHERE CountryRegionCode LIKE 'US'
+```
+### SELECT with the created VIEW
+```SQL
+SELECT * FROM CustomUSView
+```
+![View_1](https://github.com/GeeHouseCode/AdvancedSQLQuerying/assets/110656951/c2b09409-d4d8-430b-9b92-ea4a0aabd8f8)
+
