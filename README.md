@@ -4,6 +4,10 @@ Practice to become better!!!
 This repository contains portfolio of data science projects for the purpouse of self learnig and hobby.
 
 ## SQL VIEWS
+Excercise 1.
+Create SQL VIEWS to check how many sellers we have in the United States (US).
+
+An example solution to the task below.
 
 ```T-SQL
 CREATE VIEW CustomUSView
