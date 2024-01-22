@@ -37,4 +37,35 @@ SELECT * FROM SalesQuota
 ```
 ![View_2](https://github.com/GeeHouseCode/AdvancedSQLQuerying/assets/110656951/b9673cb4-18c2-47da-8ed3-01a8f52f2331)
 
+#### Excercise 3.
+The created SQL view will show which goods have been delivered and which have not.
+```T-SQL
+CREATE VIEW ShippedOrdersView 
+AS
+SELECT 
+    OrderID,
+    CustomerID,
+    OrderDate,
+    ShipName,
+    CASE 
+        WHEN ShippedDate IS NOT NULL THEN ShipCity
+        ELSE 'NO DATA'
+    END AS ShipCity,
+    CASE 
+        WHEN ShippedDate IS NOT NULL THEN ShipAddress
+        ELSE 'NO DATA'
+    END AS ShipAddress,
+	CASE 
+        WHEN ShippedDate IS NOT NULL THEN 'Delivered'
+        ELSE 'Not delivered'
+    END AS ShippedOrdersINF,
+	ShippedDate
+FROM 
+    Northwind.dbo.Orders
+```
+The result of the above SQL Views is the following table.
+```SQL
+SELECT * FROM ShippedOrdersView
+```
+![View_3](https://github.com/GeeHouseCode/AdvancedSQLQuerying/assets/110656951/554aefa0-5b59-4201-98eb-32dc86152190)
 
