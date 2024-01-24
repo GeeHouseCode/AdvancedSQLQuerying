@@ -69,3 +69,46 @@ SELECT * FROM ShippedOrdersView
 ```
 ![View_3](https://github.com/GeeHouseCode/AdvancedSQLQuerying/assets/110656951/554aefa0-5b59-4201-98eb-32dc86152190)
 
+#### Excercise 4.
+The created view shows the products that are most often sold in a given region
+
+!!! Handwritten version, not tested on the server :P "concept"
+```T-SQL
+CREATE VIEW MostSoldProductsByRegionView AS
+SELECT
+    r.RegionDescription,
+    p.ProductName,
+    COUNT(*) AS SalesCount
+FROM
+    Regions r
+    INNER JOIN Territories t ON r.RegionID = t.RegionID
+    INNER JOIN Employees e ON t.TerritoryID = e.TerritoryID
+    INNER JOIN Orders o ON e.EmployeeID = o.EmployeeID
+    INNER JOIN OrderDetails od ON o.OrderID = od.OrderID
+    INNER JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY
+    r.RegionDescription,
+    p.ProductName
+HAVING
+    COUNT(*) = (
+        SELECT
+            MAX(SalesCount)
+        FROM
+            (
+                SELECT
+                    COUNT(*) AS SalesCount
+                FROM
+                    Regions r
+                    INNER JOIN Territories t ON r.RegionID = t.RegionID
+                    INNER JOIN Employees e ON t.TerritoryID = e.TerritoryID
+                    INNER JOIN Orders o ON e.EmployeeID = o.EmployeeID
+                    INNER JOIN OrderDetails od ON o.OrderID = od.OrderID
+                    INNER JOIN Products p ON od.ProductID = p.ProductID
+                WHERE
+                    r.RegionDescription = MostSoldProductsByRegionView.RegionDescription
+                GROUP BY
+                    p.ProductName
+            ) AS Temp
+    )
+
+```
